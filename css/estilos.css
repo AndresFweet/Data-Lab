@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    background-image: url('../images/vector.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    border: 1px solid #CCC;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    width: 400px;
+    margin-top: 30px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+form h3 {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+input {
+    width: 200px;
+}

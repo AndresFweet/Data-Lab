@@ -1,0 +1,20 @@
+{
+    "name": "medisinu/ips",
+    "description": "Brindando soluciones",
+    "type": "project",
+    "require": {
+        "phpoffice/phpspreadsheet": "dev-NumberFormatMask-Helpers"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Medisinu\\Ips\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andres pastrana"
+        }
+    ],
+    "minimum-stability": "dev"
+}
