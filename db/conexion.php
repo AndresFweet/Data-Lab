@@ -3,6 +3,6 @@
     'localhost', 'root', '', 'data-lab');
     
     #if($connection) {
-     #   echo 'database is connected';
+      #  echo 'database is connected';
     #}
 ?>
