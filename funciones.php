@@ -1,6 +1,6 @@
 <?php
 
-    if (isset($_POST['send'])) {
+    /*if (isset($_POST['send'])) {
         //CONEXION A LA BASE DE DATOS
         require_once 'db/conexion.php';
 
@@ -9,27 +9,10 @@
         $name = substr($data, 0, -4);
         
         //CONSULTA PARA SABER SI EXISTE LA TABLA
-        $sql = "SELECT * FROM INFORMATION_SCHEMA.TABLES
-        WHERE TABLE_SCHEMA = 'data-lab' AND TABLE_NAME = '$data'";
-        $result = mysqli_query($connection, $sql);
-
-        //COMPROBANDO EJECUCCION DE LA CONSULTA
-        if (!$result) {
-        echo 'No se pudo ejecutar la consulta: ' . mysql_error();
-        }
-
-        //RECORRIENDO LOS RESULTADOS ENCONTRADOS
-        $json = array();
-           while ($row = mysqli_fetch_array($result)) {
-           $json[] = array(
-           'TABLA' => $row['TABLE_NAME']);            
-        }
-
-        //CANTIDAD DE RESULTADOS
-        $cant = count($json);
-        if ($cant > 0) {
-            //ACTUALIZANDOS LOS DATOS
-            require_once 'partials/update.php';
+        $exists = $exists = mysqli_query($connection, "SHOW TABLES LIKE '".$name."'");
+        
+        if ($exists->num_rows == 1) {
+           
         }else{
             require_once 'partials/save.php';
             $date = new DateTime();
@@ -58,25 +41,15 @@
                 $rows = 0;
                 
                 $result = create_table($name, $num, $doc, $fp);
-
-
-                while ($row = fgetcsv($fp, 0, ";")) {
-                //echo $row[0] . " " . $row[1] . " " . $row[2] . " " 
-                //. $row[3] . " " .$row[4] . "<br>";
-                $rows ++;
-                if ($rows > 1) {
-                    $result = insert_Data($row[0], $row[1], $row[2], $row[3], $row[4], $name);
-
-            }
-        }
-                 
-                //echo $doc[0];
-            }
-
+                
+                $server = 'C:/xampp/htdocs/Data-Lab/csv/';
+                $ruta = $server.$name."/"."Data_" .$datestring .$timestring .$data;
+                $result = insert_Data($ruta,$name);
         }
         
+    } 
 
-    }
+    }*/
 
 
 ?>
